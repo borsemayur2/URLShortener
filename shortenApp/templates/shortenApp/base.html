@@ -13,7 +13,7 @@
  $('#submitButton').click(function() {
  $.ajax({
  type: "POST",
- url: "makeshort",
+ url: "/makeshort/",
  data: {
  'url' : $('#url').val(),
  'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
@@ -27,6 +27,7 @@
 function returnSuccess(data, textStatus, jqXHR) {
  if(data.url) {
  $('#url-result').text(data.url);
+ $('#url-result').attr("href",data.url);
  $('#url').val("");
  } else {
  $('#url-result').text("Do not submit blank."); 
@@ -37,7 +38,7 @@ function returnSuccess(data, textStatus, jqXHR) {
 <body>
 <div id="wrap">
 <header>
- <h1><a href="{% url 'shortenurl' %}">URL Shortner  </a><h4>Shorten the URL</h4></h1>
+ <h1><a href="{% url 'home' %}">URL Shortner  </a><h4>Shorten the URL</h4></h1>
 </header>
   
 <div id="content">
