@@ -4,7 +4,7 @@
  <title>{% block title %}Welcome to mysite{% endblock %}</title>
  {% load staticfiles %}
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
- <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}" />
+ <link rel="stylesheet" type="text/css" href="{% static "css/custom.css"     %}" />
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -37,9 +37,7 @@ function returnSuccess(data, textStatus, jqXHR) {
 </script>
 <body>
 <div id="wrap">
-<header>
- <h1><a href="{% url 'home' %}">URL Shortner  </a><h4>Shorten the URL</h4></h1>
-</header>
+ <h1 style="text-align: center"><a href="" >URL Shortener</a></h1>
   
 <div id="content">
 {% block content %}

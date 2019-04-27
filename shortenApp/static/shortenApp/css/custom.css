@@ -8,6 +8,7 @@ text-decoration: none;
 }
  
 header {
+text-align: center;
 border-bottom: 1px solid #eeeeee;
 margin-bottom: 30px;
 padding-bottom: 10px;
@@ -21,6 +22,9 @@ padding: 10px;
 text-align: left;
 }
 #url-result {
-color: #00e000;
+color: #0cb84e;
 display: hidden;
+}
+#url {
+    background-color: #00e000;
 }

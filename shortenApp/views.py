@@ -1,4 +1,5 @@
 from django.shortcuts import  render, get_object_or_404
+from django.urls import reverse
 import random, string, json
 from shortenApp.models import Urls
 from django.http import HttpResponseRedirect, HttpResponse
@@ -12,15 +13,12 @@ def index(request):
     return render(request, 'shortenApp/index.html', c)
  
 def redirect_original(request, short_id):
-    print(short_id)
     url = get_object_or_404(Urls, pk=short_id) # get object, if not        found return 404 error
-    print(url)
     url.count += 1
     url.save()
     return HttpResponseRedirect(url.httpurl)
 def shorten_url(request):
     url = request.POST.get("url",'') 
-    print(url)
     if  Urls.objects.filter(httpurl=url).exists(): 
         short_id = Urls.objects.get(httpurl=url).short_id
         response_data = {}
@@ -37,7 +35,7 @@ def shorten_url(request):
         return HttpResponse(json.dumps({"error": "error occurs"}), content_type="application/json")
  
 def get_short_code():
-    length = 6
+    length = 6 
     char = string.ascii_uppercase + string.digits + string.ascii_lowercase
     # if the randomly generated short_id is used then generate next
     while True:
