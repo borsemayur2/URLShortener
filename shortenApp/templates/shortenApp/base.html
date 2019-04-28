@@ -28,10 +28,13 @@ function returnSuccess(data, textStatus, jqXHR) {
  if(data.url) {
  $('#url-result').text(data.url);
  $('#url-result').attr("href",data.url);
+ $('#url-result').attr("target","_blank");
+ 
  
  $('#url').val("");
 
-    var timeLeft = 30;
+ //Expiry Timer 
+    var timeLeft = 300;
     var elem = document.getElementById('timer');
     
     var timerId = setInterval(countdown, 1000);

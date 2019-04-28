@@ -17,7 +17,7 @@ def redirect_original(request, short_id):
     print("END: ", end)
     expiry = end - start
     print("EXPIRY: ",expiry)
-    if expiry>30.0:
+    if expiry>300.0:
         print('link expired')
         url = Urls.objects.filter(pk=short_id).delete()
         expiry = 0.0
