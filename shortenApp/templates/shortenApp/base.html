@@ -28,7 +28,25 @@ function returnSuccess(data, textStatus, jqXHR) {
  if(data.url) {
  $('#url-result').text(data.url);
  $('#url-result').attr("href",data.url);
+ 
  $('#url').val("");
+
+    var timeLeft = 30;
+    var elem = document.getElementById('timer');
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (timeLeft == 0) {
+        clearTimeout(timerId);
+        elem.innerHTML = "link has been expired"
+        
+      } else {
+        elem.innerHTML ="link will expire in "+ timeLeft + ' seconds';
+        timeLeft--;
+      }
+    }
+
  } else {
  $('#url-result').text("Do not submit blank."); 
  }
@@ -36,14 +54,11 @@ function returnSuccess(data, textStatus, jqXHR) {
 }
 </script>
 <body>
-<div id="wrap">
- <h1 style="text-align: center"><a href="" >URL Shortener</a></h1>
   
 <div id="content">
 {% block content %}
   
 {% endblock %}
-</div>
 </div>
 </body>
 </html>

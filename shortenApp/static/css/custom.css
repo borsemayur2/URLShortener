@@ -1,0 +1,29 @@
+
+#h1 {
+    color: #236f9b
+}
+a:hover{
+text-decoration: none;
+}
+ 
+#content {
+background-color: #94babd;
+margin-top: 20px;
+margin-left: 80px;
+border-bottom: 1px solid #eeeeee;
+margin-bottom: 30px;
+padding-bottom: 10px;
+clear: both;
+text-align: center;
+margin: 15px 10px 10px 10px;
+padding: 10px;
+}
+ 
+#url-result {
+color: #0cb84e;
+display: hidden;
+    width: 400px;
+}
+#timer {
+    color: #e40f21
+}
